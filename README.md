@@ -23,12 +23,12 @@ I decided to leverage bootstrap for styling purposes. It's quick and easy to use
 
 ### Rendition Guide
 
-Based on GIPHY's Rendition Guide, I followed a couple of suggestions in order to maximize quality and reduce loading times. I used MP4 and WEBP formats for all GIPHYs. In the preview grid, I used the smaller fixed_height renditions since a lot of GIPHYs would be loaded. On the detail view, I used the original rendition of the GIPHY which presents the highest quality since we could afford it.
+Based on GIPHY's Rendition Guide, I followed a couple of suggestions in order to maximize quality and reduce loading times. I used MP4 and WEBP formats for all GIPHYs. In the preview grid, I used the smaller fixed_width renditions since a lot of GIPHYs would be loaded. On the detail view, I used the original rendition of the GIPHY which presents the highest quality. Since the detail view displays a single GIF, we could afford to use the highest quality on that page.
 
 ### Query Params
 
-In order to access the detail view directly from a URL, I used the params from the URL to get the GIF id, and then I hit the endpoint for GIFs by id. Since this is a small project, it could afford to hit the endpoint when access the detail view and maintain code simplicity. If this was a larger project and we were concerned about performance, I would consider storing the search results in the application state, and checking the for the GIF by id in those results before fetching another request.
-I would also consider adding query params to the home page, and store the search query in a state variable that updated the URL with the search query as a parameter. Then this search page and its results could be directly access with its URL as well.
+In order to access the detail view directly from a URL, I used the params from the URL to get the GIF id, and then I hit the endpoint for GIFs by id. Since this is a small project, maintaining simplicity outweighed the benefits of reducing any marginal loading times in the detail view. If this was a larger project and we were concerned about performance, I would consider storing the search results in the application state, and checking for the GIF by id in those results before fetching another request.
+I would also consider adding query params to the home page, and store the search query in a state variable that updated the URL with the search query as a parameter. Then this search page and its results could be directly accessed with its URL as well.
 
 ### Pagination
 
