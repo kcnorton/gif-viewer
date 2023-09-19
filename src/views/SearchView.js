@@ -50,9 +50,7 @@ const SearchView = () => {
                     There's a problem with your search
                 </div>
             ) : (
-                !isLoading && (
-                    <SearchResults searchResults={results} search={search} />
-                )
+                !isLoading && <SearchResults searchResults={results} />
             )}
         </div>
     );
